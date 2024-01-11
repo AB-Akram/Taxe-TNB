@@ -7,8 +7,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="eurekaServer" />
         <module name="ms1" />
+        <module name="eurekaServer" />
+        <module name="ms2" />
         <module name="gatewayService" />
       </profile>
     </annotationProcessing>
@@ -18,6 +19,7 @@
       <module name="eurekaServer" options="-parameters" />
       <module name="gatewayService" options="-parameters" />
       <module name="ms1" options="-parameters" />
+      <module name="ms2" options="-parameters" />
     </option>
   </component>
 </project>

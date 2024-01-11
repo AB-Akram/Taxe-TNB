@@ -1,0 +1,17 @@
+server:
+  port: 0 # donner un port aleatoire
+spring:
+  application:
+    name: ms2-services # le nom qui s'affichera sur le dashboard d'eurika
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/login-tnb
+    username: root
+    password:
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka # quelle serveur d'eurika cette application doit suivre donner l'url (on peut avoir plusieur serveur d'eurika)

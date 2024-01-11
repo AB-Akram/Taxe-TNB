@@ -19,6 +19,9 @@ public class GatewayConfig {
                         .or()
                         //.path("api/catagory/**")
                         .uri("lb://ms1-services") // doit etre exactement meme nom qui se trouve sur eurika
+                ).route("ms2-services", r -> r
+                        .path("/api/liable/**")
+                        .uri("lb://ms2-services")
                 ).build();
     }
 }
