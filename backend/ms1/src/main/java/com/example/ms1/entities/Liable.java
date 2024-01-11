@@ -1,8 +1,7 @@
 package com.example.ms1.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,4 +16,5 @@ public class Liable extends Person {
     private String cin;
     @OneToMany(mappedBy = "liable")
     private List<Field> fields;
+
 }
