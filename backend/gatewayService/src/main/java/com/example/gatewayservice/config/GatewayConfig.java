@@ -17,7 +17,9 @@ public class GatewayConfig {
                 .route("ms1-services", r -> r
                         .path("/api/field/**")
                         .or()
-                        //.path("api/catagory/**")
+                        .path("/api/category/**")
+                        .or()
+                        .path("/api/tax/**")
                         .uri("lb://ms1-services") // doit etre exactement meme nom qui se trouve sur eurika
                 ).route("ms2-services", r -> r
                         .path("/api/liable/**")
