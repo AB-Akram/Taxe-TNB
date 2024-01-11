@@ -1,7 +1,7 @@
 server:
-  port: 8761
+  port: 8761 # le port par defaut d'eureka
 eureka:
-  client:
+  client: # cette section configure eureka client
     fetch-registry: false
     register-with-eureka: false
 spring:
