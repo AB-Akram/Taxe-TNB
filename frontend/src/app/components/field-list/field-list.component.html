@@ -1,0 +1,20 @@
+<h1> Fields List</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>surface</th>
+            <th>address</th>
+            <th>category</th>
+            <th>name of liable</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let field of fields"> 
+            <td> {{ field.surface }} </td>
+            <td> {{ field.address }} </td>
+            <td> {{ field.category.name }} </td>
+            <td> {{ field.liable.firstName }} </td>
+        </tr>
+    </tbody>
+
+</table>
