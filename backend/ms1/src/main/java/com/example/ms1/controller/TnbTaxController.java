@@ -15,16 +15,18 @@ import java.util.Map;
 public class TnbTaxController {
 
     @Autowired
-    private TnbTaxService categoryService;
+    private TnbTaxService tnbTaxService;
 
+    @GetMapping("")
+    public List<TnbTax> findAll(){return tnbTaxService.findAll();}
     @GetMapping("get/{id}")
     public ResponseEntity<List<TnbTax>> findAll(@PathVariable int id) {
-        return categoryService.findAllByField_Id(id);
+        return tnbTaxService.findAllByField_Id(id);
     }
 
     @PostMapping("")
     public ResponseEntity<String> save(@RequestBody TnbTax tnbTax) {
-        return categoryService.save(tnbTax);
+        return tnbTaxService.save(tnbTax);
     }
 
     @PutMapping("update/{id}")
@@ -34,7 +36,6 @@ public class TnbTaxController {
         }
 
         boolean IsPayed = IsPayedMap.get("IsPayed");
-        return categoryService.updatePayement(id, IsPayed);    }
-
-
+        return tnbTaxService.updatePayement(id, IsPayed);
+    }
 }

@@ -25,6 +25,10 @@ public class FieldService {
         return fieldDao.findAll();
     }
 
+    public Field findFieldByAddress(String address){
+        return fieldDao.findFieldByAddress(address);
+    }
+
     public Optional<Field> findById(int id) { //Optional peut rendre un ou plusieur
         return fieldDao.findById(id);
     }

@@ -1,0 +1,18 @@
+<h1> Liables List</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>lastName</th>
+            <th>firstName</th>
+            <th>cin</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let liable of liables"> <!-- categories est définit sur le fichier categoryList componenent-->
+            <td> {{ liable.lastName }} </td>
+            <td> {{ liable.firstName }} </td>
+            <td> {{ liable.cin }} </td>
+        </tr>
+    </tbody>
+
+</table>

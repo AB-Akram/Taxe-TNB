@@ -15,6 +15,7 @@ import java.util.List;
 public class Liable extends Person {
     private String cin;
     @OneToMany(mappedBy = "liable")
+    @JsonIgnore
     private List<Field> fields;
 
 }

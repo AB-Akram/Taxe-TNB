@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface FieldDao extends JpaRepository<Field, Integer> {
+    Field findFieldByAddress(String address);
 }

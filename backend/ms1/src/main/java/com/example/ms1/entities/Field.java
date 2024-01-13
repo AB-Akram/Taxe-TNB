@@ -22,7 +22,6 @@ public class Field {
     @JsonIgnore
     private List<TnbTax> tnbTaxes;
     @ManyToOne
-    @JsonIgnore
     private Liable liable;
 
 }
