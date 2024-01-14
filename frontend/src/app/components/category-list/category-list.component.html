@@ -5,33 +5,37 @@
         <tr>
             <th>name</th>
             <th>rate</th>
+            <th>actions</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let category of categories"> <!-- categories est définit sur le fichier categoryList componenent-->
             <td> {{ category.name }} </td>
             <td> {{ category.rate }} </td>
+            <td> <button type="button" class="btn btn-success" (click)="getCategoryFromList(category.id)">Modify</button>
+                 <button type="button" class="btn btn-danger" (click)="deleteCategoryFromList(category.id)">delete</button> 
+            </td>
         </tr>
     </tbody>
 
 </table>
 
 <br>
-
-<form method="post">
+<br>
+<!-- ng Model pour passer objet json (sur inspecter y'a l'objet json qui contient le name sur nput on icic name = "rate" donc l'objet json pass {"rate": 50} for example)-->
+<h1>Add your category </h1>
+<form #categoriesForm = "ngForm" (ngSubmit)="getCategoryFormData(categoriesForm.value)"> <!--#categoriesForm c'est le nom de ce formulaire || categoriesForm.value c'est de passer tous lesvaleurs qui sont sur les inputs-->
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Name</label>
-      <input type="text" class="form-control" id="exampleInputName">
+      <input type="text" [(ngModel)] = "name" name ="name" class="form-control" id="exampleInputName" placeholder="Enter Name">
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Rate</label>
-      <input type="number" class="form-control" id="exampleInputRate">
+      <input type="number" [(ngModel)] = "rate" name ="rate" class="form-control" id="exampleInputRate" placeholder="Enter rate">
     </div>
-    <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">address's field</label>
-        <input type="text" class="form-control" id="exampleInputAddress">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    
+      <button type="submit" class="btn btn-primary">Add Category</button>
   </form>
 
+  <button style="margin-top: 10px;" *ngIf="updatePost" class="btn btn-primary" (click)="updateCategoryFromData(categoriesForm.value)">Update Category</button>
 </div>

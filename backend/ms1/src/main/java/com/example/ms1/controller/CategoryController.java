@@ -46,5 +46,9 @@ public class CategoryController {
         float rate = rateMap.get("rate");
         return categoryService.updateRate(id, rate);
     }
+    @PutMapping("")
+    public Category updateCategory(@RequestBody Category category){
+        return categoryService.updateCategory(category);
+    }
 
 }

@@ -5,6 +5,7 @@ import com.example.ms1.entities.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -16,8 +17,7 @@ public class CategoryService {
     public ResponseEntity<List<Category>> findAll() {
         if (categoryDao.findAll().isEmpty())
             return ResponseEntity.badRequest().build();
-        else
-        {
+        else {
             return ResponseEntity.ok(categoryDao.findAll());
         }
     }
@@ -58,6 +58,9 @@ public class CategoryService {
         }
     }
 
+    public Category updateCategory(@RequestBody Category category) {
+        return categoryDao.save(category);
+    }
 
 
 }
