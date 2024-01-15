@@ -24,6 +24,9 @@ public class GatewayConfig {
                 ).route("ms2-services", r -> r
                         .path("/api/liable/**")
                         .uri("lb://ms2-services")
+                ).route("kafkaProducer-services", r -> r
+                        .path("/producer-liable/**")
+                        .uri("lb://kafkaProducer-services")
                 ).build();
     }
 }

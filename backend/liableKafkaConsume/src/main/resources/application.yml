@@ -3,5 +3,11 @@ spring:
     consumer:
       bootstrap-servers: localhost:9092
       group-id: 'liable-group-1'
+  application:
+    name: kafkaConsumer-services # le nom qui s'affichera sur le dashboard d'eurika
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka # quelle serveur d'eurika cette application doit suivre donner l'url (on peut avoir plusieur serveur d'eurika)
 server:
   port: 9090
