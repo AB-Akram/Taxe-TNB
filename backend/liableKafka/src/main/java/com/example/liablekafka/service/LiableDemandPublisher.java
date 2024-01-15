@@ -16,7 +16,7 @@ public class LiableDemandPublisher {
 
     public void sendMessageToTopic(Liable liable, String message) {
         CompletableFuture<SendResult<String, Object>> topicLiable = template
-                .send("topicLiable", message);
+                .send("topicLiable", message + " CIN : " + liable.getCin());
         topicLiable.whenComplete((result, ex) -> {
             if (ex == null) {
                 System.out.println(message + " CIN : " + liable.getCin());
