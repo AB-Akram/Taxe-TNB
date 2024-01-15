@@ -18,9 +18,11 @@ public class LiableEventController {
     @GetMapping("/publish/{message}")
     public ResponseEntity<?> publishMessage(@RequestBody Liable liable, @PathVariable String message) {
         try {
+            System.out.println("oui consumer");
             publisher.sendMessageToTopic(liable, message);
             return ResponseEntity.ok("message published successfully !!");
         } catch (Exception e) {
+            System.out.println("OBJECT : " +liable.getCin());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
 
         }

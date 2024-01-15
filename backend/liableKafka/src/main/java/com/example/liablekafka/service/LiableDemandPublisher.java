@@ -5,7 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 @Service
@@ -13,8 +15,13 @@ public class LiableDemandPublisher {
 
     @Autowired
     private KafkaTemplate<String, Object> template;
+    @Autowired
+    RestTemplate restTemplate;
+
+    String uri = "http://localhost:8080/api";
 
     public void sendMessageToTopic(Liable liable, String message) {
+
         CompletableFuture<SendResult<String, Object>> topicLiable = template
                 .send("topicLiable", message + " CIN : " + liable.getCin());
         topicLiable.whenComplete((result, ex) -> {
