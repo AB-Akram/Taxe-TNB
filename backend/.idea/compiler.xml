@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ms1" />
+        <module name="liableKafka" />
         <module name="eurekaServer" />
         <module name="ms2" />
         <module name="gatewayService" />
@@ -18,6 +19,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="eurekaServer" options="-parameters" />
       <module name="gatewayService" options="-parameters" />
+      <module name="liableKafka" options="-parameters" />
       <module name="ms1" options="-parameters" />
       <module name="ms2" options="-parameters" />
     </option>
